@@ -13,6 +13,7 @@ const useObServe = (observTarget, isLoading = false) => {
 
     useEffect(() => {
         if (observTarget.current && !isLoading) {
+<<<<<<< HEAD
             observer = new IntersectionObserver(obsHandler, {
                 rootMargin: '80px',
                 threshold: 1,
@@ -22,6 +23,17 @@ const useObServe = (observTarget, isLoading = false) => {
         return () => {
             if (!isLoading) {
                 observTarget.current && observer.unobserve(observTarget.current);
+=======
+            observer.current = new IntersectionObserver(obsHandler, {
+                rootMargin: '80px', 
+                threshold: 1,
+            });
+            observer.current.observe(observTarget.current);
+        }
+        return () => {
+            if (!isLoading) {
+                observTarget.current && observer.current.unobserve(observTarget.current);
+>>>>>>> 397754e (feat: netflify)
             }
         };
     }, [page, isLoading]);
