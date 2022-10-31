@@ -27,12 +27,6 @@ const MyAvatar = ({ userInfo }) => {
         }
     }, []);
 
-<<<<<<< HEAD
-    // html
-=======
-    // htmlt대표
->>>>>>> 397754e (feat: netflify)
-
     return (
         <div>
             {userInfo.img && <StandImgButton onClick={onProfileStandardUpdate}>X</StandImgButton>}
